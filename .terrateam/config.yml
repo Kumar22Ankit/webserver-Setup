@@ -4,3 +4,11 @@ hooks:
       - type: oidc
         provider: aws
         role_arn: "arn:aws:iam::975050186482:role/terrateam"
+
+access_control:
+  enabled: true
+  policies:
+    - tag_query: ''
+      plan: ['user:Kumar22Ankit']
+      apply: ['user:Cipher-08']
+      
