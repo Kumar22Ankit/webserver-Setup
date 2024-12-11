@@ -4,16 +4,8 @@ hooks:
       - type: oidc
         provider: aws
         role_arn: "arn:aws:iam::975050186482:role/terrateam"
-
-hooks:
-  plan:
-    pre:
       - type: run
         cmd: ['aws', 's3', 'sync', 's3://terraform-terratream-cache', '/tmp/tf_cache_dir']
     post:
       - type: run
-        cmd: ['aws', 's3', 'sync', '/tmp/tf_cache_dir', 's3://terraform-terratream-cache']     
-      
-      
-      
-     
+        cmd: ['aws', 's3', 'sync', '/tmp/tf_cache_dir', 's3://terraform-terratream-cache']
